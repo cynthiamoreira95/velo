@@ -58,8 +58,11 @@ const OrderLookup = () => {
     }
     
     if (order) {
-      setSearchedOrder(order);
-    } else {
+//setTimeout(() => {
+  setSearchedOrder(order);
+//}, 7000); simulando um delay de 7 segundos
+
+        } else {
       setNotFound(true);
     }
   };
@@ -85,8 +88,7 @@ const OrderLookup = () => {
               <div>
                 <Label htmlFor="order-id">Número do Pedido</Label>
                 <Input
-                  id="order-id"
-                  data-testid="search-order-id"
+                  id= "order-id"
                   type="text"
                   placeholder="Ex: VLO-ABC123"
                   value={orderId}
@@ -96,7 +98,7 @@ const OrderLookup = () => {
               </div>
               <Button
                 type="submit"
-                data-testid="search-order-button"
+               
                 className="w-full"
                 disabled={!orderId.trim() || isLoading}
               >
